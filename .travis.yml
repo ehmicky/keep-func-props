@@ -37,7 +37,7 @@ jobs:
         provider: npm
         email: ehmicky@gmail.com
         api_key:
-          secure: K5yLOg2yo7HNb508lUgCBIUDLTgvtj5mLU0d7ugnZufItiIfqsIIibi77Kd1ZdRwXQJM/0JI12PjlCfHo+rT0ldtoCCaArlNu4QHlqbce6b5WOEnkcw/PwyXoDKqYUFdFrxhvNl8INLp8hL6+7zIUQhOvffMGD0e5L36Sr8f5uGNRSikUnkbLM6bZDP1GDPuaF+SQC+efJy4cJKCtbYlGIVNqzY2NjP0dorSVbHkgxSszGn6AelZWBcf2bQPQjEOEhUSk8i1PlgUqQG4Q9lYCkEwyeqB5teqPthaYXOIz7xEKcH2SSMvToIvrfyKRrIa6WbdQx5JZlC739Ehwv3fZzT6Idolo6lpPl2o8D4jcxV5iySWTKi/uXDBNArat8+4ehMoS/EG9qG2catU7bSkB1ZdUQw9wcmEYxmJE+2ZM4f4N3QreKYqlrRyMH2mSNTcB7bXyZSzN5hJd9zBzS/qG6d+K18Zmmp2LBhfoMQZ0FxZMXwRpzlM4tnt3zQqY1F5NLb5TGq7CO15r8HRk4btxSrF5yBZ1TJnkJpGLaYCZuqi3Dzyttolx2W6sOa3m/PPQFzpkr69k3sY370Kdj2/cQpLgv7ttXLzWmBwpzQcNcu0rRoEQBIYpFrd35LlmWWr66EHQDfyzrKsrjdcyuFuXyRQl5xPEjBeCEptDAyY5Ao=
+          secure: M9kYKItjceYNOjk5fX0Agi5DSkDbQuE8gG/DhOubUpV0H8kMoipoTc0wylvHdxj5J+QzhCcz8mishLA05OTHsW0boWPbEl8IvveiWCx3MQ4Orr1O/i+Lq840oI+mNlyPv1aOUWjWTYgXbM5TuFV4APQVAavGHv46PMCYNHZBmaPbLeQ0qhN9eKhmuL82rQDP63iZTbWLrhMJgHrJzJOh/qs409X50tcb2pUHNY4G7AQPg9EnSqUsFc+Dm8CplOmDbd7tdjoR/eMdIg/GHOV+uN8anUTUab06F3pKvk2NUZBoNcFBoSj1AxBMcVmav+n0XV1vY+gmB//fqpr4M1sv1gEGZLe2tNLmqkz+TESBysOf/YSyHa3PdTvVIYMWviWbYFAgw8udmB3bzfSCwjy8gK+Fhyqt6Whe7pWiyil1vJV5XsXt+cr/iRSPtLrwCW4j7GuYXI5u3sIYCoWRK0L4fuiUxeqT6796llwJL0HsPCiKjKIwGrRSgEVQbVX8lITmYHHjrNMLVPS2Dlhb5fZ+y6wDQ4VXYaL3aSRONdjwe/k0slnmQwgfInjprIO0ofYWXmqzVoNyWTwlbJ0ONI4MQLn1DLO64Pn8ErTQZfwzMc4yf0rPw6QBHFcQZR2mCVzKCooDIF4Tc8crQU4j+EWfSFEYH94P1bPPlNk0ysx+yOU=
         on:
           tags: true
         # We want to run install step and keep built files for release
