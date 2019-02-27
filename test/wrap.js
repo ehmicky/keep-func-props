@@ -25,3 +25,7 @@ test('should not modify functor context', t => {
 
   t.true(functor.calledOn(context))
 })
+
+test('should wrap itself', t => {
+  t.is(keepFuncProps.name, 'keepFuncProps')
+})

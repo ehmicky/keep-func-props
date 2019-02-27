@@ -4,7 +4,7 @@
 const mimicFn = require('mimic-fn')
 
 // Wraps a functor so it does not modify a function `name`, `length`, etc.
-const keepProps = function(functor) {
+const keepFuncProps = function(functor) {
   if (typeof functor !== 'function') {
     return functor
   }
@@ -21,8 +21,11 @@ const keepProps = function(functor) {
   }
 }
 
-// Use on itself so that `keepProps(functor)` does not modify functor's
+// Use on itself so that `keepFuncProps(functor)` does not modify functor's
 // properties
-const keepPropsA = keepProps(keepProps)
+const keepFuncPropsA = keepFuncProps(keepFuncProps)
+// When we use it on `keepFuncProps()` itself so that it's named `keepFuncProps`
+// instead of `newFunctor`
+const keepFuncPropsB = keepFuncPropsA(keepFuncProps)
 
-module.exports = keepPropsA
+module.exports = keepFuncPropsB
