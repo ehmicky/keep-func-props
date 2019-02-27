@@ -6,7 +6,7 @@ const mimicFn = require('mimic-fn')
 // Wraps a functor so it does not modify a function `name`, `length`, etc.
 const keepProps = function(functor) {
   if (typeof functor !== 'function') {
-    throw new TypeError('Argument must be a function')
+    return functor
   }
 
   return function newFunctor(func, ...args) {
