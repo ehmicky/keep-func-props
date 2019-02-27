@@ -55,3 +55,8 @@ The function wrapper must:
 - return a new function
 
 Each of those requirements is optional.
+
+# Related projects
+
+If you want to modify a function that is not a function wrapper, check out
+[`mimic-fn`](https://github.com/sindresorhus/mimic-fn).
