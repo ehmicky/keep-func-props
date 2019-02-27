@@ -46,3 +46,5 @@ notifications:
   webhooks:
     - https://www.travisbuddy.com?only=failed,errored&insertMode=update
   email: false
+# We do not use `cache: npm` because downloading and uploading the cache
+# actually takes more time than it saves during `npm ci`.
