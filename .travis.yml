@@ -8,7 +8,6 @@ os:
   - osx
   - linux
 dist: xenial
-before_install: npm i -g npm
 install: npm ci
 script: npm test
 # When pushing a tagged commit, Travis adds two builds: one with the tag, one
