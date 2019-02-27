@@ -14,7 +14,7 @@
       "pre-push": "gulp check"
     }
   },
-  "description": "",
+  "description": "Wrap a function without changing its name, length and other properties",
   "keywords": [],
   "license": "Apache-2.0",
   "homepage": "https://git.io/fhNZZ",
