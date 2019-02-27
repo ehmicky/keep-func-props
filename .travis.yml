@@ -42,7 +42,7 @@ jobs:
           tags: true
         # We want to run install step and keep built files for release
         skip_cleanup: true
-cache: npm
+cache: false
 notifications:
   webhooks:
     - https://www.travisbuddy.com?only=failed,errored&insertMode=update
