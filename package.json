@@ -15,7 +15,17 @@
     }
   },
   "description": "Wrap a function without changing its name, length and other properties",
-  "keywords": [],
+  "keywords": [
+    "function",
+    "functional",
+    "wrapper",
+    "name",
+    "length",
+    "properties",
+    "functor",
+    "mimic",
+    "call"
+  ],
   "license": "Apache-2.0",
   "homepage": "https://git.io/fhNZZ",
   "repository": "ehmicky/keep-func-props",
