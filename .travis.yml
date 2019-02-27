@@ -8,6 +8,7 @@ os:
   - osx
   - linux
 dist: xenial
+install: npm ci
 script: npm test
 # When pushing a tagged commit, Travis adds two builds: one with the tag, one
 # without. We only want to build the one with the tag, because it's the one
@@ -42,7 +43,7 @@ jobs:
           tags: true
         # We want to run install step and keep built files for release
         skip_cleanup: true
-cache: false
+cache: npm
 notifications:
   webhooks:
     - https://www.travisbuddy.com?only=failed,errored&insertMode=update
