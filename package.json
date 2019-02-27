@@ -1,6 +1,6 @@
 {
   "name": "keep-func-props",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "files": [
     "dist",
