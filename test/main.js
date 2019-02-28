@@ -41,6 +41,13 @@ ARGS.forEach(({ name, getFunctor, func }) => {
     )
   })
 
+  test(`[${name}] should not modify symbol properties`, t => {
+    const funcB = getFunctor()(func)
+
+    t.true(func[Symbol.for('test')])
+    t.is(func[Symbol.for('test')], funcB[Symbol.for('test')])
+  })
+
   test(`[${name}] should not modify non-enumerable properties`, t => {
     const funcB = getFunctor()(func)
 

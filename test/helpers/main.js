@@ -22,8 +22,11 @@ const getIdentity = function() {
 
 // We add function static properties to test them
 const addFuncProps = function(func) {
-  // eslint-disable-next-line fp/no-mutation, no-param-reassign
-  func.prop = true
+  // eslint-disable-next-line fp/no-mutating-assign
+  Object.assign(func, {
+    prop: true,
+    [Symbol.for('test')]: true,
+  })
 
   // eslint-disable-next-line fp/no-mutating-methods
   Object.defineProperties(func, {
