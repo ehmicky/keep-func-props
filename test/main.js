@@ -19,10 +19,10 @@ const ARGS = [
     func: identityFunc,
   },
 ]
-/* eslint-disable max-nested-callbacks */
 ARGS.forEach(({ name, getFunctor, func }) => {
   const PROPERTIES = ['name', 'length', 'prop']
   PROPERTIES.forEach(propName => {
+    // eslint-disable-next-line max-nested-callbacks
     test(`[${name}] [${propName}] should not modify properties`, t => {
       const funcB = getFunctor()(func)
 
@@ -54,4 +54,3 @@ ARGS.forEach(({ name, getFunctor, func }) => {
     t.is(Object.getPrototypeOf(func), Object.getPrototypeOf(funcB))
   })
 })
-/* eslint-enable max-nested-callbacks */
