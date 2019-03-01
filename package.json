@@ -1,7 +1,7 @@
 {
   "name": "keep-func-props",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "dist",
     "!*~"
