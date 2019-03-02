@@ -1,5 +1,7 @@
 [![downloads](https://img.shields.io/npm/dt/keep-func-props.svg?logo=npm)](https://www.npmjs.com/package/keep-func-props) [![last commit](https://img.shields.io/github/last-commit/ehmicky/keep-func-props.svg?logo=github&logoColor=white)](https://github.com/ehmicky/keep-func-props/graphs/contributors) [![Coverage Status](https://img.shields.io/codecov/c/github/ehmicky/keep-func-props.svg?label=test%20coverage&logo=codecov)](https://codecov.io/gh/ehmicky/keep-func-props) [![travis](https://img.shields.io/travis/ehmicky/keep-func-props/master.svg?logo=travis)](https://travis-ci.org/ehmicky/keep-func-props/builds) [![node](https://img.shields.io/node/v/keep-func-props.svg?logo=node.js)](#) [![Gitter](https://img.shields.io/gitter/room/ehmicky/keep-func-props.svg?logo=gitter)](https://gitter.im/ehmicky/keep-func-props)
 
+Wrap a function without changing its name, length and other properties.
+
 Function wrappers are commonly used in functional programming. They take a
 function as input and return it wrapped. Examples include
 [memoizing](https://github.com/planttheidea/moize) or ensuring a function is
