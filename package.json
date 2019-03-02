@@ -15,8 +15,8 @@
   },
   "description": "Wrap a function without changing its name, length and other properties",
   "keywords": [
-    "function",
     "functional",
+    "function",
     "wrapper",
     "name",
     "length",
