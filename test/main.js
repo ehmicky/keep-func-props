@@ -2,7 +2,7 @@
 
 const test = require('ava')
 
-const keepFuncProps = require('..')
+const keepFuncProps = require('../src')
 
 const { identityFunctor, identityFunc } = require('./helpers')
 

@@ -3,7 +3,7 @@
 const test = require('ava')
 const sinon = require('sinon')
 
-const keepFuncProps = require('..')
+const keepFuncProps = require('../src')
 
 const { identityFunctor, identityFunc } = require('./helpers')
 
