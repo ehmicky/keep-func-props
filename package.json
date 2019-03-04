@@ -42,6 +42,7 @@
     "mimic-fn": "^1.2.0"
   },
   "devDependencies": {
+    "ava": "^1.2.1",
     "gulp": "^4.0.0",
     "gulp-shared-tasks": "^0.17.0",
     "husky": "^1.3.1",
