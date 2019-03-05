@@ -33,7 +33,7 @@ jobs:
         # We do not use the `npm` provider because the build does not fail when
         # `npm publish` fails when using that provider.
         provider: script
-        script: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc && npm publish
+        script: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc && npm publish
         on:
           tags: true
         # We want to run install step and keep built files for release
