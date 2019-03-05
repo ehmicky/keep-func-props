@@ -23,18 +23,9 @@ jobs:
       script: gulp coverage
     # Deployment must happen after tests for the whole matrix have been
     # performed, so we use `jobs.include` with a different `stage`.
-    # We run `release-it` locally (which tagged the commit and create a
-    # GitHub release) but we publish to npm only after CI success.
     - stage: Deploy
       if: tag is not blank
-      script:
-        # We have already run tests in previous stages.
-        - gulp build
-        # We escape the whole string to prevent leaking the token in logs.
-        - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
-        # We do not use the `npm` provider because the build does not fail when
-        # `npm publish` fails when using that provider.
-        - npm publish
+      script: gulp publish
       # NPM_TOKEN environment variable
       env:
         secure: iKAIj/G3X659sSQzl0kU9G/mL71nbtX3fWpOonaxA8N3vYDMAcb0j5zcpk6jFVRapkW3fSYur055avlgNCgxhz210ezf0IaoH6Tg7U0S135AvXgn3JE4h/AZokr2rjyDZ94QuUKnCx3iad8nO6WTQSMs1VZV+/HpDOJf6K1sz0HtyGL+hjKsGCsWIBhff2GosNIFsYjsobiRABvuDp3mjBlldUfx8Dg6m4H6o/cu72uXZ7s/BSHmFsznUxs5Pz/83DswMuF5+Nh3D5+Su3VqVJ15VWZclTEaCrQQWpSNKXrZGYUeL9YTb2hu2YIpdAq7crDvPt7cZTAKRvwB1WXBQevkOeA2HM+MA+nD2gW139hxn40ovGM4HbTZJmDatMIKIlY22lelpJifU9NEvHkpABQCFQEl+UBYHhY/g+WCZtggRcx09N+Ieo6zwee3CpiHTm2SwmK4iVYakzV0I2kcD53OkTLqUMlppL2ANyflkFiUp5AmmADtJyHLf1vsc1TkDJiW96wgZdgQtGVTJRuabgZH32OX2nT4M4AmYQVZxhhUbQnfqQivZDJuUSI/CMPmhOnR2ku98/EMd4/NgWwEjMrmE9W5vV9nezF+FrlUfHIV4MFBt1vfgJ//7gAKrIu7ntquxaQ8EMnqFYUiPk4jcAIPFaRPWErSS7PhRmCHRFI=
