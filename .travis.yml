@@ -19,20 +19,21 @@ jobs:
     # been performed, so we get the merged coverage map
     #- stage: Coverage check
     #  script: gulp coverage
-    # If CI fails, codecov does not post a bot comment on PR, so we skip it
+    # If CI fails, codecov does not post a bot comment on PR, so we skip them.
     #  if: type != pull_request && (branch == master || tag is not blank)
     # Deployment must happen after tests for the whole matrix have been
-    # performed, so we use `jobs.include` with a different `stage`
+    # performed, so we use `jobs.include` with a different `stage`.
+    # We run `release-it` locally (which tagged the commit and create a
+    # GitHub release) but we publish to npm only after CI success.
     - stage: Deploy
       if: tag is not blank
       script:
-        # We have already run tests
+        # We have already run tests in previous stages.
         - gulp build
-        # We run `release-it` locally (which tagged the commit and create a
-        # GitHub release) but we publish to npm only after CI success.
+        # We escape the whole string to prevent leaking the token in logs.
+        - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
         # We do not use the `npm` provider because the build does not fail when
         # `npm publish` fails when using that provider.
-        - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
         - npm publish
       # NPM_TOKEN environment variable
       env:
