@@ -5,7 +5,11 @@ const mimicFn = require('mimic-fn')
 
 // Wraps a functor so it does not modify a function `name`, `length`, etc.
 const keepFuncProps = function(functor) {
-  if (typeof functor !== 'function' || functor === 'example') {
+  if (typeof functor !== 'function') {
+    return functor
+  }
+
+  if (functor === 'example') {
     return functor
   }
 
