@@ -22,7 +22,7 @@ jobs:
       # does not post any comment. Since codecov comments are nicer than
       # Travis Buddy comments for this, we skip it during PRs. Also this makes
       # PRs checks faster.
-      if: type != pull_request && type == pull_request
+      if: type != pull_request
       script: gulp coverage
     # Deployment must happen after tests for the whole matrix have been
     # performed, so we use `jobs.include` with a different `stage`.
