@@ -10,17 +10,17 @@ jobs:
     # Test on Windows/Mac/Linux using latest Node.js.
     # Also test on Linux with older Node.js versions.
     # We do not run each possible combination to make CI faster.
-    - os: windows
-    - os: osx
-    - node_js: 8.10.0
-    - node_js: '10'
-    - {}
+    #- os: windows
+    #- os: osx
+    #- node_js: 8.10.0
+    #- node_js: '10'
+    #- {}
     # Test coverage check must happen after tests for the whole matrix have
     # been performed, so we get the merged coverage map
-    - stage: Coverage check
-      script: gulp coverage
-      # If CI fails, codecov does not post a bot comment on PR, so we skip it
-      if: type != pull_request && (branch == master || tag is not blank)
+    #- stage: Coverage check
+    #  script: gulp coverage
+    # If CI fails, codecov does not post a bot comment on PR, so we skip it
+    #  if: type != pull_request && (branch == master || tag is not blank)
     # Deployment must happen after tests for the whole matrix have been
     # performed, so we use `jobs.include` with a different `stage`
     - stage: Deploy
@@ -30,14 +30,17 @@ jobs:
       # We run `release-it` locally (which tagged the commit and create a
       # GitHub release) but we publish to npm only after CI success.
       deploy:
-        provider: npm
-        email: ehmicky@gmail.com
-        api_key:
-          secure: M9kYKItjceYNOjk5fX0Agi5DSkDbQuE8gG/DhOubUpV0H8kMoipoTc0wylvHdxj5J+QzhCcz8mishLA05OTHsW0boWPbEl8IvveiWCx3MQ4Orr1O/i+Lq840oI+mNlyPv1aOUWjWTYgXbM5TuFV4APQVAavGHv46PMCYNHZBmaPbLeQ0qhN9eKhmuL82rQDP63iZTbWLrhMJgHrJzJOh/qs409X50tcb2pUHNY4G7AQPg9EnSqUsFc+Dm8CplOmDbd7tdjoR/eMdIg/GHOV+uN8anUTUab06F3pKvk2NUZBoNcFBoSj1AxBMcVmav+n0XV1vY+gmB//fqpr4M1sv1gEGZLe2tNLmqkz+TESBysOf/YSyHa3PdTvVIYMWviWbYFAgw8udmB3bzfSCwjy8gK+Fhyqt6Whe7pWiyil1vJV5XsXt+cr/iRSPtLrwCW4j7GuYXI5u3sIYCoWRK0L4fuiUxeqT6796llwJL0HsPCiKjKIwGrRSgEVQbVX8lITmYHHjrNMLVPS2Dlhb5fZ+y6wDQ4VXYaL3aSRONdjwe/k0slnmQwgfInjprIO0ofYWXmqzVoNyWTwlbJ0ONI4MQLn1DLO64Pn8ErTQZfwzMc4yf0rPw6QBHFcQZR2mCVzKCooDIF4Tc8crQU4j+EWfSFEYH94P1bPPlNk0ysx+yOU=
+        # We do not use the `npm` provider because the build does not fail when
+        # `npm publish` fails when using that provider.
+        provider: script
+        script: echo //registry.npmjs.org/:_authToken=$NPM_TOKEN >> .npmrc && npm publish
         on:
           tags: true
         # We want to run install step and keep built files for release
         skip_cleanup: true
+      # NPM_TOKEN environment variable
+      env:
+        secure: iKAIj/G3X659sSQzl0kU9G/mL71nbtX3fWpOonaxA8N3vYDMAcb0j5zcpk6jFVRapkW3fSYur055avlgNCgxhz210ezf0IaoH6Tg7U0S135AvXgn3JE4h/AZokr2rjyDZ94QuUKnCx3iad8nO6WTQSMs1VZV+/HpDOJf6K1sz0HtyGL+hjKsGCsWIBhff2GosNIFsYjsobiRABvuDp3mjBlldUfx8Dg6m4H6o/cu72uXZ7s/BSHmFsznUxs5Pz/83DswMuF5+Nh3D5+Su3VqVJ15VWZclTEaCrQQWpSNKXrZGYUeL9YTb2hu2YIpdAq7crDvPt7cZTAKRvwB1WXBQevkOeA2HM+MA+nD2gW139hxn40ovGM4HbTZJmDatMIKIlY22lelpJifU9NEvHkpABQCFQEl+UBYHhY/g+WCZtggRcx09N+Ieo6zwee3CpiHTm2SwmK4iVYakzV0I2kcD53OkTLqUMlppL2ANyflkFiUp5AmmADtJyHLf1vsc1TkDJiW96wgZdgQtGVTJRuabgZH32OX2nT4M4AmYQVZxhhUbQnfqQivZDJuUSI/CMPmhOnR2ku98/EMd4/NgWwEjMrmE9W5vV9nezF+FrlUfHIV4MFBt1vfgJ//7gAKrIu7ntquxaQ8EMnqFYUiPk4jcAIPFaRPWErSS7PhRmCHRFI=
 notifications:
   webhooks:
     - https://www.travisbuddy.com?only=failed,errored&insertMode=update
