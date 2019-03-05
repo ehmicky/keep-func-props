@@ -4,7 +4,7 @@ dist: xenial
 # When pushing a tagged commit, Travis adds two builds: one with the tag, one
 # without. We only want to build the one with the tag, because it's the one
 # that runs the deployment stage
-if: type != pull_request && !(commit_message =~ /^Release/ && tag is blank)
+if: '!(commit_message =~ /^Release/ && tag is blank)'
 jobs:
   include:
     # Test on Windows/Mac/Linux using latest Node.js.
