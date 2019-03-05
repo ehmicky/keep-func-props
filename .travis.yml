@@ -18,9 +18,9 @@ jobs:
     # Test coverage check must happen after tests for the whole matrix have
     # been performed, so we get the merged coverage map
     - stage: Coverage check
-      script: gulp coverage
       # If CI fails, codecov does not post a bot comment on PR, so we skip them.
       if: type != pull_request && (branch == master || tag is not blank)
+      script: gulp coverage
     # Deployment must happen after tests for the whole matrix have been
     # performed, so we use `jobs.include` with a different `stage`.
     # We run `release-it` locally (which tagged the commit and create a
