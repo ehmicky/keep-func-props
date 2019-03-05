@@ -1,6 +1,6 @@
 {
   "name": "keep-func-props",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "main": "build/src/index.js",
   "files": [
     "build/src"
