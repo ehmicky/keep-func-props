@@ -14,13 +14,13 @@ jobs:
     # - os: osx
     # - node_js: '8.10.0'
     # - node_js: '10'
-    # - node_js: '11'
+    - node_js: '11'
     # Test coverage check must happen after tests for the whole matrix have
     # been performed, so we get the merged coverage map
-    # - stage: Coverage check
-    # If CI fails, codecov does not post a bot comment on PR, so we skip them.
-    #   if: type != pull_request
-    #   script: gulp coverage
+    - stage: Coverage check
+      # If CI fails, codecov does not post a bot comment on PR, so we skip them.
+      #   if: type != pull_request
+      script: gulp coverage
     # Deployment must happen after tests for the whole matrix have been
     # performed, so we use `jobs.include` with a different `stage`.
     - stage: Deploy
