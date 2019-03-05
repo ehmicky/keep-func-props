@@ -9,10 +9,6 @@ const keepFuncProps = function(functor) {
     return functor
   }
 
-  if (functor === 'example') {
-    return functor
-  }
-
   return function newFunctor(func, ...args) {
     // eslint-disable-next-line fp/no-this, no-invalid-this
     const newFunc = functor.call(this, func, ...args)
