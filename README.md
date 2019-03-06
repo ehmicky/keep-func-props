@@ -50,13 +50,11 @@ const functionWrapper = function(func) {
 const betterWrapper = keepFuncProps(functionWrapper)
 ```
 
-The function wrapper must:
+The function wrapper:
 
-- take a function as first argument
-- take additional arguments (e.g. an options object)
-- return a new function
-
-Each of those requirements is optional.
+- must take a function as first argument
+- can take additional arguments (e.g. an options object)
+- must return a new function
 
 # Related projects
 
