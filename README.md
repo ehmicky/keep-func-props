@@ -2,14 +2,14 @@
 
 Wrap a function without changing its name, length and other properties.
 
+Function wrappers return a new function which means the original
+function's `name`, `length` and other properties are usually lost. This module
+enhances them to keep those properties.
+
 Function wrappers are commonly used in functional programming. They take a
 function as input and return it wrapped. Examples include
 [memoizing](https://github.com/planttheidea/moize) or ensuring a function is
 only called once.
-
-However those wrappers return a new function which means the original
-function's `name`, `length` and other properties are lost. This module
-enhances a function wrapper to keep those properties.
 
 <!-- eslint-disable import/no-extraneous-dependencies, import/no-internal-modules, node/no-extraneous-require -->
 
