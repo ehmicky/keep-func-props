@@ -39,7 +39,7 @@
   "dependencies": {
     "@babel/runtime": "^7.3.4",
     "core-js": "^2.6.5",
-    "mimic-fn": "^1.2.0"
+    "mimic-fn": "^2.0.0"
   },
   "devDependencies": {
     "ava": "^1.3.1",
