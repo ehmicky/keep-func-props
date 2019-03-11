@@ -10,7 +10,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "gulp check"
+      "pre-push": "gulp check --full"
     }
   },
   "description": "Wrap a function without changing its name, length and other properties",
