@@ -38,6 +38,8 @@ npm install keep-func-props
 
 # Usage
 
+<!-- eslint-disable import/no-extraneous-dependencies, node/no-extraneous-require -->
+
 ```js
 const keepFuncProps = require('keep-func-props')
 
