@@ -69,7 +69,7 @@ A function wrapper is passed as argument. A copy of it is returned.
 # See also
 
 - [`mimic-fn`](https://github.com/sindresorhus/mimic-fn): same but for
-  functions that are not a function wrappers.
+  functions that do not wrap other functions.
 
 # Contributors
 
