@@ -17,6 +17,7 @@ only called once.
 
 ```js
 const keepFuncProps = require('keep-func-props')
+// Any function wrapper works
 const memoize = require('lodash/memoize')
 
 const betterMemoize = keepFuncProps(memoize)
@@ -60,10 +61,10 @@ const betterWrapper = keepFuncProps(functionWrapper)
 ## keepFuncProps(functionWrapper)
 
 _Argument_ (`functionWrapper`):
-`function(anyFunction, [...args]) => newAnyFunction`<br>
+`function(anyFunction, [...args]) => newFunction`<br>
 _Returns_: new `functionWrapper`
 
-A function wrapper is passed as argument. It is copied, modified then returned.
+A function wrapper is passed as argument. A copy of it is returned.
 
 # See also
 
