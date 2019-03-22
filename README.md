@@ -11,6 +11,8 @@ function as input and return it wrapped. Examples include
 [memoizing](https://github.com/planttheidea/moize) or ensuring a function is
 only called once.
 
+# Example
+
 <!-- eslint-disable import/no-extraneous-dependencies, import/no-internal-modules, node/no-extraneous-require -->
 
 ```js
@@ -30,6 +32,13 @@ console.log(memoize(anyFunction))
 console.log(betterMemoize(anyFunction))
 ```
 
+# Demo
+
+You can try this library:
+
+- either directly [in your browser](https://repl.it/@ehmicky/keep-func-props).
+- or by executing the [`examples` files](examples/README.md) in a terminal.
+
 # Install
 
 ```bash
@@ -43,8 +52,8 @@ npm install keep-func-props
 ```js
 const keepFuncProps = require('keep-func-props')
 
-const functionWrapper = function(func) {
-  return (...args) => func(...args)
+const functionWrapper = function(anyFunction) {
+  return (...args) => anyFunction(...args)
 }
 
 // `betterWrapper` is like `functionWrapper` but it keeps the function
@@ -52,11 +61,13 @@ const functionWrapper = function(func) {
 const betterWrapper = keepFuncProps(functionWrapper)
 ```
 
-The function wrapper:
+## keepFuncProps(functionWrapper)
 
-- must take a function as first argument
-- can take additional arguments (e.g. an options object)
-- must return a new function
+_Argument_ (`functionWrapper`):
+`function(anyFunction, [...args]) => newAnyFunction`<br>
+_Returns_: new `functionWrapper`
+
+A function wrapper is passed as argument. It is copied, modified then returned.
 
 # See also
 
