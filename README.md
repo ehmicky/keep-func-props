@@ -17,19 +17,16 @@ only called once.
 
 ```js
 const keepFuncProps = require('keep-func-props')
-const memoize = require('lodash/memoize')
+
+// This could be `lodash/memoize` for example.
+const memoize = require('./memoize')
 
 const betterMemoize = keepFuncProps(memoize)
 
-const anyFunction = function() {
-  return true
-}
+const anyFunction = () => true
 
-// Function name is `memoized`
-console.log(memoize(anyFunction))
-
-// Function name is `anyFunction`
-console.log(betterMemoize(anyFunction))
+console.log(memoize(anyFunction)) // `[Function: memoized]`
+console.log(betterMemoize(anyFunction)) // `[Function: anyFunction]`
 ```
 
 # Demo
