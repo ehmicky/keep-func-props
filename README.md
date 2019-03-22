@@ -17,9 +17,7 @@ only called once.
 
 ```js
 const keepFuncProps = require('keep-func-props')
-
-// This could be `lodash/memoize` for example.
-const memoize = require('./memoize')
+const memoize = require('lodash/memoize')
 
 const betterMemoize = keepFuncProps(memoize)
 
@@ -49,6 +47,7 @@ npm install keep-func-props
 ```js
 const keepFuncProps = require('keep-func-props')
 
+// Any function wrapper works
 const functionWrapper = function(anyFunction) {
   return (...args) => anyFunction(...args)
 }
