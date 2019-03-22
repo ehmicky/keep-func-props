@@ -30,7 +30,7 @@ console.log(memoize(anyFunction))
 console.log(betterMemoize(anyFunction))
 ```
 
-# Installation
+# Install
 
 ```bash
 npm install keep-func-props
@@ -58,10 +58,10 @@ The function wrapper:
 - can take additional arguments (e.g. an options object)
 - must return a new function
 
-# Related projects
+# See also
 
-If you want to modify a function that is not a function wrapper, check out
-[`mimic-fn`](https://github.com/sindresorhus/mimic-fn).
+- [`mimic-fn`](https://github.com/sindresorhus/mimic-fn): same but for
+  functions that are not a function wrappers.
 
 # Contributors
 
