@@ -1,7 +1,7 @@
 This directory contains examples of this library.
 
 To execute them, first [install](../README.md#install) `keep-func-props`. Then
-run `node node_modules/unix-permissions/examples/FILE.js`.
+run `node node_modules/keep-func-props/examples/FILE.js`.
 
 You can edit the examples.
 
