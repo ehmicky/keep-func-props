@@ -13,12 +13,15 @@ require('./utils')
 
 const keepFuncProps = require('keep-func-props')
 
-// This could be `lodash/memoize` for example.
-const memoize = require('./memoize')
+// Any function wrapper works
+const wrapper = function(anyFunction) {
+  return (...args) => anyFunction(...args)
+}
 
-const betterMemoize = keepFuncProps(memoize)
+// `betterWrapper` is like `wrapper` but it keeps the function properties
+const betterWrapper = keepFuncProps(wrapper)
 
-const anyFunction = () => true
+const getTrue = () => true
 
-console.log(memoize(anyFunction)) // `[Function: memoized]`
-console.log(betterMemoize(anyFunction)) // `[Function: anyFunction]`
+console.log(wrapper(getTrue)) // `[Function]`
+console.log(betterWrapper(getTrue)) // `[Function: getTrue]`

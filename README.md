@@ -49,20 +49,18 @@ npm install keep-func-props
 const keepFuncProps = require('keep-func-props')
 
 // Any function wrapper works
-const functionWrapper = function(anyFunction) {
+const wrapper = function(anyFunction) {
   return (...args) => anyFunction(...args)
 }
 
-// `betterWrapper` is like `functionWrapper` but it keeps the function
-// properties
-const betterWrapper = keepFuncProps(functionWrapper)
+// `betterWrapper` is like `wrapper` but it keeps the function properties
+const betterWrapper = keepFuncProps(wrapper)
 ```
 
-## keepFuncProps(functionWrapper)
+## keepFuncProps(wrapper)
 
-_Argument_ (`functionWrapper`):
-`function(anyFunction, [...args]) => newFunction`<br>
-_Returns_: new `functionWrapper`
+_Argument_ (`wrapper`): `function(anyFunction, [...args]) => newFunction`<br>
+_Returns_: new `wrapper`
 
 A function wrapper is passed as argument. A copy of it is returned.
 
