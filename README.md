@@ -62,7 +62,7 @@ const betterWrapper = keepFuncProps(wrapper)
 `wrapper`: `function(anyFunction, [...args]) => newFunction`<br>
 _Returns_: new `wrapper`
 
-A function wrapper is passed as argument. A copy of it is returned.
+A function `wrapper` is passed as argument. A copy of it is returned.
 
 # See also
 
