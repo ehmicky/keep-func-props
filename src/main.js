@@ -1,7 +1,4 @@
-// eslint-disable-next-line filenames/match-exported
-'use strict'
-
-const mimicFn = require('mimic-fn')
+import mimicFn from 'mimic-fn'
 
 // Wraps a functor so it does not modify a function `name`, `length`, etc.
 const keepFuncProps = function(functor) {
@@ -24,8 +21,9 @@ const keepFuncProps = function(functor) {
 // Use on itself so that `keepFuncProps(functor)` does not modify functor's
 // properties
 const keepFuncPropsA = keepFuncProps(keepFuncProps)
-// When we use it on `keepFuncProps()` itself so that it's named `keepFuncProps`
+
+// Then we use it on `keepFuncProps()` itself so that it's named `keepFuncProps`
 // instead of `newFunctor`
 const keepFuncPropsB = keepFuncPropsA(keepFuncProps)
 
-module.exports = keepFuncPropsB
+export { keepFuncPropsB as keepFuncProps }

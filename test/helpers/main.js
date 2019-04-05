@@ -1,22 +1,20 @@
-'use strict'
-
 // Dummy functors and functions used in tests
-const identityFunctor = function(func) {
+export const identityFunctor = function(func) {
   return function newFunc(...args) {
     // eslint-disable-next-line fp/no-this, no-invalid-this
     return func.call(this, ...args)
   }
 }
 
-const identityFunc = function(value) {
+export const identityFunc = function(value) {
   return value
 }
 
-const getTrue = function() {
+export const getTrue = function() {
   return true
 }
 
-const getIdentity = function() {
+export const getIdentity = function() {
   return identityFunc
 }
 
@@ -42,10 +40,3 @@ const addFuncProps = function(func) {
 
 addFuncProps(identityFunctor)
 addFuncProps(identityFunc)
-
-module.exports = {
-  identityFunctor,
-  identityFunc,
-  getTrue,
-  getIdentity,
-}

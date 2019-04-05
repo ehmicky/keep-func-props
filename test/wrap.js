@@ -1,11 +1,9 @@
-'use strict'
+import test from 'ava'
+import sinon from 'sinon'
 
-const test = require('ava')
-const sinon = require('sinon')
+import { keepFuncProps } from '../src/main.js'
 
-const keepFuncProps = require('../src')
-
-const { identityFunctor, identityFunc } = require('./helpers')
+import { identityFunctor, identityFunc } from './helpers/main.js'
 
 test('should not modify functor arguments', t => {
   const functor = sinon.spy(identityFunctor)

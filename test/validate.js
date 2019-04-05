@@ -1,10 +1,8 @@
-'use strict'
+import test from 'ava'
 
-const test = require('ava')
+import { keepFuncProps } from '../src/main.js'
 
-const keepFuncProps = require('../src')
-
-const { getTrue, getIdentity } = require('./helpers')
+import { getTrue, getIdentity } from './helpers/main.js'
 
 test('should be a noop if input is not a function', t => {
   const returnValue = keepFuncProps(true)

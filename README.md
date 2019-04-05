@@ -21,7 +21,7 @@ only called once.
 <!-- eslint-disable import/no-extraneous-dependencies, import/no-internal-modules, node/no-extraneous-require -->
 
 ```js
-const keepFuncProps = require('keep-func-props')
+const { keepFuncProps } = require('keep-func-props')
 // Any function wrapper works
 const memoize = require('lodash/memoize')
 
@@ -51,7 +51,7 @@ npm install keep-func-props
 <!-- eslint-disable import/no-extraneous-dependencies, node/no-extraneous-require -->
 
 ```js
-const keepFuncProps = require('keep-func-props')
+const { keepFuncProps } = require('keep-func-props')
 
 // Any function wrapper works
 const wrapper = function(anyFunction) {

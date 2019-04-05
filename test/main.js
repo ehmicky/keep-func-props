@@ -1,10 +1,8 @@
-'use strict'
+import test from 'ava'
 
-const test = require('ava')
+import { keepFuncProps } from '../src/main.js'
 
-const keepFuncProps = require('../src')
-
-const { identityFunctor, identityFunc } = require('./helpers')
+import { identityFunctor, identityFunc } from './helpers/main.js'
 
 // We test that the functor keeps its input function properties.
 // We do it:
