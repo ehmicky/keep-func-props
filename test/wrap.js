@@ -1,7 +1,7 @@
 import test from 'ava'
 import sinon from 'sinon'
 
-import { keepFuncProps } from '../src/main.js'
+import keepFuncProps from '../src/main.js'
 
 import { identityFunctor, identityFunc } from './helpers/main.js'
 

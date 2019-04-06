@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import { keepFuncProps } from '../src/main.js'
+import keepFuncProps from '../src/main.js'
 
 import { identityFunctor, identityFunc } from './helpers/main.js'
 
