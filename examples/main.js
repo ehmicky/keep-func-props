@@ -11,7 +11,7 @@
 // eslint-disable-next-line import/no-unassigned-import
 require('./utils')
 
-const { keepFuncProps } = require('keep-func-props')
+const keepFuncProps = require('keep-func-props')
 
 // Any function wrapper works
 const wrapper = function(anyFunction) {
