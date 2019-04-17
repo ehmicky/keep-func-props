@@ -1,0 +1,1 @@
+extends: standard-prettier-fp/build/src/.eslintrc.json
