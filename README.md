@@ -7,9 +7,9 @@
 
 Wrap a function without changing its name, length and other properties.
 
-Function wrappers return a new function which means the original
-function's `name`, `length` and other properties are usually lost. This module
-enhances them to keep those properties instead.
+Function wrappers return a new function which means the original function's
+`name`, `length` and other properties are usually lost. This module enhances
+them to keep those properties instead.
 
 Function wrappers are commonly used in functional programming. They take a
 function as input and return it wrapped. Examples include
@@ -64,15 +64,15 @@ const betterWrapper = keepFuncProps(wrapper)
 
 ## keepFuncProps(wrapper)
 
-`wrapper`: `(anyFunction, [...args]) => newFunction`<br>
-_Returns_: new `wrapper`
+`wrapper`: `(anyFunction, [...args]) => newFunction`<br> _Returns_: new
+`wrapper`
 
 A function `wrapper` is passed as argument. A copy of it is returned.
 
 # See also
 
-- [`mimic-fn`](https://github.com/sindresorhus/mimic-fn): same but for
-  functions that do not wrap other functions.
+- [`mimic-fn`](https://github.com/sindresorhus/mimic-fn): same but for functions
+  that do not wrap other functions.
 
 # Support
 
