@@ -18,8 +18,6 @@ only called once.
 
 # Example
 
-<!-- eslint-disable import/no-extraneous-dependencies, import/no-internal-modules, node/no-extraneous-require -->
-
 ```js
 const keepFuncProps = require('keep-func-props')
 // Any function wrapper works
@@ -47,8 +45,6 @@ npm install keep-func-props
 ```
 
 # Usage
-
-<!-- eslint-disable import/no-extraneous-dependencies, node/no-extraneous-require -->
 
 ```js
 const keepFuncProps = require('keep-func-props')
