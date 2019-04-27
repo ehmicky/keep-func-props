@@ -1,4 +1,3 @@
-// eslint-disable-next-line filenames/match-exported
 import mimicFn from 'mimic-fn'
 
 // Wraps a functor so it does not modify a function `name`, `length`, etc.
@@ -28,5 +27,4 @@ const keepFuncPropsB = keepFuncPropsA(keepFuncProps)
 
 // We do not use `export default` because Babel transpiles it in a way that
 // requires CommonJS users to `require(...).default` instead of `require(...)`.
-// eslint-disable-next-line import/no-commonjs
 module.exports = keepFuncPropsB
