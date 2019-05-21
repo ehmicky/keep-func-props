@@ -45,7 +45,7 @@
   "devDependencies": {
     "ava": "^1.4.1",
     "gulp": "^4.0.2",
-    "gulp-shared-tasks": "^0.27.73",
+    "gulp-shared-tasks": "^0.27.74",
     "husky": "^2.3.0",
     "sinon": "^7.3.2"
   },
