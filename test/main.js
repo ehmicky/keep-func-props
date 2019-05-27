@@ -10,26 +10,29 @@ import { identityFunctor, identityFunc } from './helpers/main.js'
 //  - once for the functor itself (`caller`), i.e. ensures that functor does
 //    not get modified after being wrapped by `keepFuncProps()` itself
 const ARGS = [
-  { name: 'caller', getFunctor: () => keepFuncProps, func: identityFunctor },
+  { title: 'caller', getFunctor: () => keepFuncProps, func: identityFunctor },
   {
-    name: 'callee',
+    title: 'callee',
     getFunctor: () => keepFuncProps(identityFunctor),
     func: identityFunc,
   },
 ]
-ARGS.forEach(({ name, getFunctor, func }) => {
-  const PROPERTIES = ['name', 'length', 'prop']
+const PROPERTIES = ['name', 'length', 'prop']
+
+ARGS.forEach(({ title, getFunctor, func }) => {
   PROPERTIES.forEach(propName => {
     // eslint-disable-next-line max-nested-callbacks
-    test(`[${name}] [${propName}] should not modify properties`, t => {
+    test(`should not modify properties | ${title} ${propName}`, t => {
       const funcB = getFunctor()(func)
 
       t.true(func[propName] !== undefined)
       t.is(func[propName], funcB[propName])
     })
   })
+})
 
-  test(`[${name}] should not modify property descriptors`, t => {
+ARGS.forEach(({ title, getFunctor, func }) => {
+  test(`should not modify property descriptors | ${title}`, t => {
     const funcB = getFunctor()(func)
 
     t.true(func.descriptors)
@@ -39,21 +42,21 @@ ARGS.forEach(({ name, getFunctor, func }) => {
     )
   })
 
-  test(`[${name}] should not modify symbol properties`, t => {
+  test(`should not modify symbol properties | ${title}`, t => {
     const funcB = getFunctor()(func)
 
     t.true(func[Symbol.for('test')])
     t.is(func[Symbol.for('test')], funcB[Symbol.for('test')])
   })
 
-  test(`[${name}] should not modify non-enumerable properties`, t => {
+  test(`should not modify non-enumerable properties | ${title}`, t => {
     const funcB = getFunctor()(func)
 
     t.true(func.nonEnum)
     t.is(func.nonEnum, funcB.nonEnum)
   })
 
-  test(`[${name}] should not modify inherited properties`, t => {
+  test(`should not modify inherited properties | ${title}`, t => {
     const funcB = getFunctor()(func)
 
     t.is(Object.getPrototypeOf(func), Object.getPrototypeOf(funcB))
