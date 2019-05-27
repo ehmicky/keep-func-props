@@ -1,4 +1,5 @@
 import test from 'ava'
+import testEach from 'test-each'
 
 import keepFuncProps from '../src/main.js'
 
@@ -17,21 +18,21 @@ const ARGS = [
     func: identityFunc,
   },
 ]
-const PROPERTIES = ['name', 'length', 'prop']
 
-ARGS.forEach(({ title, getFunctor, func }) => {
-  PROPERTIES.forEach(propName => {
-    // eslint-disable-next-line max-nested-callbacks
-    test(`should not modify properties | ${title} ${propName}`, t => {
+testEach(
+  ARGS,
+  ['name', 'length', 'prop'],
+  ({ title }, { getFunctor, func }, propName) => {
+    test(`should not modify properties | ${title}`, t => {
       const funcB = getFunctor()(func)
 
       t.true(func[propName] !== undefined)
       t.is(func[propName], funcB[propName])
     })
-  })
-})
+  },
+)
 
-ARGS.forEach(({ title, getFunctor, func }) => {
+testEach(ARGS, ({ title }, { getFunctor, func }) => {
   test(`should not modify property descriptors | ${title}`, t => {
     const funcB = getFunctor()(func)
 
