@@ -21,7 +21,7 @@ const ARGS = [
 
 testEach(
   ARGS,
-  ['name', 'length', 'prop'],
+  ['name', 'prop'],
   ({ title }, { getFunctor, func }, propName) => {
     test(`should not modify properties | ${title}`, t => {
       const funcB = getFunctor()(func)
