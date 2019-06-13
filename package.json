@@ -15,7 +15,7 @@
       "pre-push": "gulp check --full"
     }
   },
-  "description": "Wrap a function without changing its name, length and other properties",
+  "description": "Wrap a function without changing its name and other properties",
   "keywords": [
     "function",
     "functional",

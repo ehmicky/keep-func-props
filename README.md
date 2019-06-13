@@ -7,11 +7,11 @@
 [![Twitter](https://img.shields.io/badge/%E2%80%8B-twitter-4cc61e.svg?logo=twitter)](https://twitter.com/intent/follow?screen_name=ehmicky)
 [![Medium](https://img.shields.io/badge/%E2%80%8B-medium-4cc61e.svg?logo=medium)](https://medium.com/@ehmicky)
 
-Wrap a function without changing its name, length and other properties.
+Wrap a function without changing its name and other properties.
 
 Function wrappers return a new function which means the original function's
-`name`, `length` and other properties are usually lost. This module enhances
-them to keep those properties instead.
+`name` and other properties are usually lost. This module enhances them to keep
+those properties instead.
 
 Function wrappers are commonly used in functional programming. They take a
 function as input and return it wrapped. Examples include
