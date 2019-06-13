@@ -11,7 +11,7 @@ const keepFuncProps = function(functor) {
     const newFunc = functor.call(this, func, ...args)
 
     if (typeof func === 'function' && typeof newFunc === 'function') {
-      mimicFn(newFunc, func)
+      mimicFn(newFunc, func, { ignoreNonConfigurable: true })
     }
 
     return newFunc
