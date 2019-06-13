@@ -92,3 +92,13 @@ test('should copy inherited properties', t => {
 
   t.is(ChildCopy.inheritedFunc, Child.inheritedFunc)
 })
+
+test('should wrap `toString()`', t => {
+  const functor = keepFuncProps(identityFunctor)
+  const funcCopy = functor(identityFunc)
+
+  t.is(
+    funcCopy.toString(),
+    `/* Wrapped with newFunc() */\n${identityFunc.toString()}`,
+  )
+})
