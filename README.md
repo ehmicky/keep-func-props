@@ -13,7 +13,7 @@ Function wrappers return a new function which means the original function's
 `name` and other properties are usually lost. This module enhances them to keep
 those properties instead.
 
-The new function will print the original function's body when stringified.
+The new function will also print the original function's body when stringified.
 
 Function wrappers are commonly used in functional programming. They take a
 function as input and return it wrapped. Examples include
