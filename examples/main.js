@@ -22,5 +22,16 @@ const betterWrapper = keepFuncProps(wrapper)
 
 const getTrue = () => true
 
+// Function `name` and other properties are kept
+console.log(getTrue) // `[Function: getTrue]`
 console.log(wrapper(getTrue)) // `[Function]`
 console.log(betterWrapper(getTrue)) // `[Function: getTrue]`
+
+// Function body is kept when stringified
+console.log(String(getTrue))
+// () => true
+console.log(String(wrapper(getTrue)))
+// (...args) => anyFunction(...args)
+console.log(String(betterWrapper(getTrue)))
+// /* Wrapped */
+// () => true

@@ -13,6 +13,8 @@ Function wrappers return a new function which means the original function's
 `name` and other properties are usually lost. This module enhances them to keep
 those properties instead.
 
+The new function will print the original function's body when stringified.
+
 Function wrappers are commonly used in functional programming. They take a
 function as input and return it wrapped. Examples include
 [memoizing](https://github.com/planttheidea/moize) or ensuring a function is
@@ -29,8 +31,30 @@ const betterMemoize = keepFuncProps(memoize)
 
 const anyFunction = () => true
 
+// Function `name` and other properties are kept
+console.log(anyFunction) // `[Function: anyFunction]`
 console.log(memoize(anyFunction)) // `[Function: memoized]`
 console.log(betterMemoize(anyFunction)) // `[Function: anyFunction]`
+
+// Function body is kept when stringified
+console.log(String(anyFunction))
+/*
+  () => true
+*/
+console.log(String(memoize(anyFunction)))
+/*
+  function() {
+    var args = arguments,
+      key = resolver ? resolver.apply(this, args) : args[0],
+      cache = memoized.cache;
+    ...
+  }
+*/
+console.log(String(betterMemoize(anyFunction)))
+/*
+  // Wrapped with memoized()
+  () => true
+*/
 ```
 
 # Demo
