@@ -1,65 +1,94 @@
 import test from 'ava'
-import testEach from 'test-each'
 
 import keepFuncProps from '../src/main.js'
 
 import { identityFunctor, identityFunc } from './helpers/main.js'
 
-// We test that the functor keeps its input function properties.
-// We do it:
-//  - once for the function passed as argument to the functor (`callee`),
-//  - once for the functor itself (`caller`), i.e. ensures that functor does
-//    not get modified after being wrapped by `keepFuncProps()` itself
-const ARGS = [
-  { title: 'caller', getFunctor: () => keepFuncProps, func: identityFunctor },
-  {
-    title: 'callee',
-    getFunctor: () => keepFuncProps(identityFunctor),
-    func: identityFunc,
-  },
-]
+test('should copy properties', t => {
+  const func = identityFunc.bind()
+  // eslint-disable-next-line fp/no-mutation
+  func.prop = true
 
-testEach(
-  ARGS,
-  ['name', 'prop'],
-  ({ title }, { getFunctor, func }, propName) => {
-    test(`should not modify properties | ${title}`, t => {
-      const funcB = getFunctor()(func)
+  const functor = keepFuncProps(identityFunctor)
+  const funcCopy = functor(func)
 
-      t.true(func[propName] !== undefined)
-      t.is(func[propName], funcB[propName])
-    })
-  },
-)
+  t.is(funcCopy.prop, func.prop)
+})
 
-testEach(ARGS, ({ title }, { getFunctor, func }) => {
-  test(`should not modify property descriptors | ${title}`, t => {
-    const funcB = getFunctor()(func)
+test('should copy properties of functor itself', t => {
+  const functor = identityFunctor.bind()
+  // eslint-disable-next-line fp/no-mutation
+  functor.prop = true
+  const functorCopy = keepFuncProps(functor)
 
-    t.true(func.descriptors)
-    t.deepEqual(
-      Object.getOwnPropertyDescriptor(func, 'descriptors'),
-      Object.getOwnPropertyDescriptor(funcB, 'descriptors'),
-    )
+  t.is(functorCopy.prop, functor.prop)
+})
+
+test('should copy name', t => {
+  const functor = keepFuncProps(identityFunctor)
+  const funcCopy = functor(identityFunc)
+
+  t.is(funcCopy.name, identityFunc.name)
+})
+
+test('should not copy `length`', t => {
+  const functor = keepFuncProps(identityFunctor)
+  const funcCopy = functor(identityFunc)
+
+  t.not(funcCopy.length, identityFunc.length)
+})
+
+test('should copy property descriptors', t => {
+  const func = identityFunc.bind()
+  // eslint-disable-next-line fp/no-mutating-methods
+  Object.defineProperty(func, 'prop', {
+    get: identityFunc,
+    configurable: false,
   })
 
-  test(`should not modify symbol properties | ${title}`, t => {
-    const funcB = getFunctor()(func)
+  const functor = keepFuncProps(identityFunctor)
+  const funcCopy = functor(func)
 
-    t.true(func[Symbol.for('test')])
-    t.is(func[Symbol.for('test')], funcB[Symbol.for('test')])
-  })
+  t.deepEqual(
+    Object.getOwnPropertyDescriptor(funcCopy, 'prop'),
+    Object.getOwnPropertyDescriptor(func, 'prop'),
+  )
+})
 
-  test(`should not modify non-enumerable properties | ${title}`, t => {
-    const funcB = getFunctor()(func)
+test('should copy symbol properties', t => {
+  const func = identityFunc.bind()
+  const symbol = Symbol('test')
+  // eslint-disable-next-line fp/no-mutation
+  func[symbol] = true
 
-    t.true(func.nonEnum)
-    t.is(func.nonEnum, funcB.nonEnum)
-  })
+  const functor = keepFuncProps(identityFunctor)
+  const funcCopy = functor(func)
 
-  test(`should not modify inherited properties | ${title}`, t => {
-    const funcB = getFunctor()(func)
+  t.is(funcCopy[symbol], func[symbol])
+})
 
-    t.is(Object.getPrototypeOf(func), Object.getPrototypeOf(funcB))
-  })
+test('should copy non-enumerable properties', t => {
+  const func = identityFunc.bind()
+  // eslint-disable-next-line fp/no-mutating-methods
+  Object.defineProperty(func, 'nonEnum', { value: true, enumerable: false })
+
+  const functor = keepFuncProps(identityFunctor)
+  const funcCopy = functor(func)
+
+  t.is(funcCopy.nonEnum, func.nonEnum)
+})
+
+test('should copy inherited properties', t => {
+  // eslint-disable-next-line fp/no-class
+  class Parent {
+    // eslint-disable-next-line no-empty-function
+    static inheritedFunc() {}
+  }
+  // eslint-disable-next-line fp/no-class
+  class Child extends Parent {}
+
+  const functor = keepFuncProps(identityFunctor)
+  const ChildCopy = functor(Child)
+
+  t.is(ChildCopy.inheritedFunc, Child.inheritedFunc)
 })
