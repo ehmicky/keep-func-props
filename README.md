@@ -38,23 +38,17 @@ console.log(betterMemoize(anyFunction)) // `[Function: anyFunction]`
 
 // Function body is kept when stringified
 console.log(String(anyFunction))
-/*
-  () => true
-*/
+// () => true
 console.log(String(memoize(anyFunction)))
-/*
-  function() {
-    var args = arguments,
-      key = resolver ? resolver.apply(this, args) : args[0],
-      cache = memoized.cache;
-    ...
-  }
-*/
+// function() {
+//   var args = arguments,
+//   key = resolver ? resolver.apply(this, args) : args[0],
+//   cache = memoized.cache;
+//   ...
+// }
 console.log(String(betterMemoize(anyFunction)))
-/*
-  // Wrapped with memoized()
-  () => true
-*/
+// /* Wrapped with memoized() */
+// () => true
 ```
 
 # Demo
