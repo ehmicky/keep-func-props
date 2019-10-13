@@ -39,7 +39,6 @@
     "test": "test"
   },
   "dependencies": {
-    "core-js": "^3.3.2",
     "mimic-fn": "^3.0.0"
   },
   "devDependencies": {
