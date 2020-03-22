@@ -70,7 +70,7 @@ npm install keep-func-props
 const keepFuncProps = require('keep-func-props')
 
 // Any function wrapper works
-const wrapper = function(anyFunction) {
+const wrapper = function (anyFunction) {
   return (...args) => anyFunction(...args)
 }
 

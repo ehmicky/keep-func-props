@@ -5,7 +5,7 @@ import keepFuncProps from '../src/main.js'
 
 import { identityFunctor, identityFunc } from './helpers/main.js'
 
-test('should pass functor arguments', t => {
+test('should pass functor arguments', (t) => {
   const functor = sinon.spy(identityFunctor)
 
   const functorCopy = keepFuncProps(functor)
@@ -14,7 +14,7 @@ test('should pass functor arguments', t => {
   t.true(functor.calledWith(identityFunc, 'a', 'b'))
 })
 
-test('should pass functor context', t => {
+test('should pass functor context', (t) => {
   const functor = sinon.spy(identityFunctor)
 
   const functorCopy = keepFuncProps(functor)
@@ -24,6 +24,6 @@ test('should pass functor context', t => {
   t.true(functor.calledOn(context))
 })
 
-test('should wrap itself', t => {
+test('should wrap itself', (t) => {
   t.is(keepFuncProps.name, 'keepFuncProps')
 })

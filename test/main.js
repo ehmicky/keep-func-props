@@ -4,7 +4,7 @@ import keepFuncProps from '../src/main.js'
 
 import { identityFunctor, identityFunc } from './helpers/main.js'
 
-test('should copy properties', t => {
+test('should copy properties', (t) => {
   const func = identityFunc.bind()
   // eslint-disable-next-line fp/no-mutation
   func.prop = true
@@ -15,7 +15,7 @@ test('should copy properties', t => {
   t.is(funcCopy.prop, func.prop)
 })
 
-test('should copy properties of functor itself', t => {
+test('should copy properties of functor itself', (t) => {
   const functor = identityFunctor.bind()
   // eslint-disable-next-line fp/no-mutation
   functor.prop = true
@@ -24,21 +24,21 @@ test('should copy properties of functor itself', t => {
   t.is(functorCopy.prop, functor.prop)
 })
 
-test('should copy name', t => {
+test('should copy name', (t) => {
   const functor = keepFuncProps(identityFunctor)
   const funcCopy = functor(identityFunc)
 
   t.is(funcCopy.name, identityFunc.name)
 })
 
-test('should not copy `length`', t => {
+test('should not copy `length`', (t) => {
   const functor = keepFuncProps(identityFunctor)
   const funcCopy = functor(identityFunc)
 
   t.not(funcCopy.length, identityFunc.length)
 })
 
-test('should copy property descriptors', t => {
+test('should copy property descriptors', (t) => {
   const func = identityFunc.bind()
   // eslint-disable-next-line fp/no-mutating-methods
   Object.defineProperty(func, 'prop', {
@@ -55,7 +55,7 @@ test('should copy property descriptors', t => {
   )
 })
 
-test('should copy symbol properties', t => {
+test('should copy symbol properties', (t) => {
   const func = identityFunc.bind()
   const symbol = Symbol('test')
   // eslint-disable-next-line fp/no-mutation
@@ -67,7 +67,7 @@ test('should copy symbol properties', t => {
   t.is(funcCopy[symbol], func[symbol])
 })
 
-test('should copy non-enumerable properties', t => {
+test('should copy non-enumerable properties', (t) => {
   const func = identityFunc.bind()
   // eslint-disable-next-line fp/no-mutating-methods
   Object.defineProperty(func, 'nonEnum', { value: true, enumerable: false })
@@ -78,7 +78,7 @@ test('should copy non-enumerable properties', t => {
   t.is(funcCopy.nonEnum, func.nonEnum)
 })
 
-test('should copy inherited properties', t => {
+test('should copy inherited properties', (t) => {
   // eslint-disable-next-line fp/no-class
   class Parent {
     // eslint-disable-next-line no-empty-function
@@ -93,7 +93,7 @@ test('should copy inherited properties', t => {
   t.is(ChildCopy.inheritedFunc, Child.inheritedFunc)
 })
 
-test('should wrap `toString()`', t => {
+test('should wrap `toString()`', (t) => {
   const functor = keepFuncProps(identityFunctor)
   const funcCopy = functor(identityFunc)
 

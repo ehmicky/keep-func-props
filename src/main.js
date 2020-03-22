@@ -1,7 +1,7 @@
 import mimicFn from 'mimic-fn'
 
 // Wraps a functor so it does not modify a function `name`, etc.
-const keepFuncProps = function(functor) {
+const keepFuncProps = function (functor) {
   if (typeof functor !== 'function') {
     return functor
   }
