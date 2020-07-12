@@ -11,6 +11,7 @@ test('should be a noop if input is not a function', (t) => {
 })
 
 test('should allow functors not returning a function', (t) => {
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   const getTrue = () => true
   const functor = keepFuncProps(getTrue)
   const returnValue = functor(identityFunc)
@@ -19,6 +20,7 @@ test('should allow functors not returning a function', (t) => {
 })
 
 test('should allow functors not taking a function as argument', (t) => {
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   const getTrue = () => true
   const functor = keepFuncProps(getTrue)
   const returnValue = functor()
