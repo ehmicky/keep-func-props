@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/ehmicky/design/master/keep-func-props/keep-func-props.svg?sanitize=true" width="700"/>
+<img src="https://raw.githubusercontent.com/ehmicky/design/main/keep-func-props/keep-func-props.svg?sanitize=true" width="700"/>
 
 [![Codecov](https://img.shields.io/codecov/c/github/ehmicky/keep-func-props.svg?label=tested&logo=codecov)](https://codecov.io/gh/ehmicky/keep-func-props)
 [![Build](https://github.com/ehmicky/keep-func-props/workflows/Build/badge.svg)](https://github.com/ehmicky/keep-func-props/actions)
