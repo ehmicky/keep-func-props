@@ -42,7 +42,7 @@
     "mimic-fn": "^3.1.0"
   },
   "devDependencies": {
-    "@ehmicky/dev-tasks": "^0.31.79",
+    "@ehmicky/dev-tasks": "^0.31.80",
     "husky": "^4.3.8",
     "sinon": "^9.2.4"
   },
