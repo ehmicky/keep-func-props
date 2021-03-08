@@ -3,7 +3,6 @@
 [![Codecov](https://img.shields.io/codecov/c/github/ehmicky/keep-func-props.svg?label=tested&logo=codecov)](https://codecov.io/gh/ehmicky/keep-func-props)
 [![Build](https://github.com/ehmicky/keep-func-props/workflows/Build/badge.svg)](https://github.com/ehmicky/keep-func-props/actions)
 [![Node](https://img.shields.io/node/v/keep-func-props.svg?logo=node.js)](https://www.npmjs.com/package/keep-func-props)
-[![Gitter](https://img.shields.io/gitter/room/ehmicky/keep-func-props.svg?logo=gitter)](https://gitter.im/ehmicky/keep-func-props)
 [![Twitter](https://img.shields.io/badge/%E2%80%8B-twitter-4cc61e.svg?logo=twitter)](https://twitter.com/intent/follow?screen_name=ehmicky)
 [![Medium](https://img.shields.io/badge/%E2%80%8B-medium-4cc61e.svg?logo=medium)](https://medium.com/@ehmicky)
 
@@ -92,11 +91,7 @@ A function `wrapper` is passed as argument. A copy of it is returned.
 
 # Support
 
-If you found a bug or would like a new feature, _don't hesitate_ to
-[submit an issue on GitHub](../../issues).
-
-For other questions, feel free to
-[chat with us on Gitter](https://gitter.im/ehmicky/keep-func-props).
+For any question, _don't hesitate_ to [submit an issue on GitHub](../../issues).
 
 Everyone is welcome regardless of personal background. We enforce a
 [Code of conduct](CODE_OF_CONDUCT.md) in order to promote a positive and
