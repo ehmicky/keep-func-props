@@ -79,7 +79,7 @@ test('should copy non-enumerable properties', (t) => {
 })
 
 test('should copy inherited properties', (t) => {
-  // eslint-disable-next-line fp/no-class
+  // eslint-disable-next-line fp/no-class, unicorn/no-static-only-class
   class Parent {
     // eslint-disable-next-line no-empty-function
     static inheritedFunc() {}
