@@ -21,10 +21,12 @@ only called once.
 
 # Example
 
+<!-- eslint-disable node/no-extraneous-import -->
+
 ```js
-const keepFuncProps = require('keep-func-props')
+import keepFuncProps from 'keep-func-props'
 // Any function wrapper works
-const memoize = require('lodash/memoize')
+import memoize from 'lodash/memoize.js'
 
 const betterMemoize = keepFuncProps(memoize)
 
@@ -65,8 +67,10 @@ npm install keep-func-props
 
 # Usage
 
+<!-- eslint-disable node/no-extraneous-import -->
+
 ```js
-const keepFuncProps = require('keep-func-props')
+import keepFuncProps from 'keep-func-props'
 
 // Any function wrapper works
 const wrapper = function (anyFunction) {
