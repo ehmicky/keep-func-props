@@ -23,8 +23,5 @@ const keepFuncProps = function (functor) {
 const keepFuncPropsA = keepFuncProps(keepFuncProps)
 // Then we use it on `keepFuncProps()` itself so that it's named `keepFuncProps`
 // instead of `newFunctor`
-const keepFuncPropsB = keepFuncPropsA(keepFuncProps)
-
-// We do not use `export default` because Babel transpiles it in a way that
-// requires CommonJS users to `require(...).default` instead of `require(...)`.
-module.exports = keepFuncPropsB
+// eslint-disable-next-line import/no-default-export
+export default keepFuncPropsA(keepFuncProps)
