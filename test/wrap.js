@@ -1,7 +1,7 @@
 import test from 'ava'
+// eslint-disable-next-line node/no-extraneous-import
+import keepFuncProps from 'keep-func-props'
 import sinon from 'sinon'
-
-import keepFuncProps from '../src/main.js'
 
 import { identityFunctor, identityFunc } from './helpers/main.js'
 

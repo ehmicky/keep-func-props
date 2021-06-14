@@ -1,6 +1,6 @@
 import test from 'ava'
-
-import keepFuncProps from '../src/main.js'
+// eslint-disable-next-line node/no-extraneous-import
+import keepFuncProps from 'keep-func-props'
 
 import { identityFunctor, identityFunc } from './helpers/main.js'
 
