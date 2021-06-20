@@ -21,7 +21,7 @@ only called once.
 
 # Example
 
-<!-- eslint-disable node/no-extraneous-import, node/file-extension-in-import -->
+<!-- eslint-disable node/file-extension-in-import -->
 
 ```js
 import keepFuncProps from 'keep-func-props'
@@ -66,8 +66,6 @@ npm install keep-func-props
 ```
 
 # Usage
-
-<!-- eslint-disable node/no-extraneous-import -->
 
 ```js
 import keepFuncProps from 'keep-func-props'
