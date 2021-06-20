@@ -34,7 +34,7 @@
     "test": "test"
   },
   "dependencies": {
-    "mimic-fn": "^3.1.0"
+    "mimic-fn": "^4.0.0"
   },
   "devDependencies": {
     "@ehmicky/dev-tasks": "^1.0.30",
