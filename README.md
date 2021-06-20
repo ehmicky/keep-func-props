@@ -21,12 +21,12 @@ only called once.
 
 # Example
 
-<!-- eslint-disable node/no-extraneous-import -->
+<!-- eslint-disable node/no-extraneous-import, node/file-extension-in-import -->
 
 ```js
 import keepFuncProps from 'keep-func-props'
 // Any function wrapper works
-import memoize from 'lodash/memoize.js'
+import memoize from 'lodash/memoize'
 
 const betterMemoize = keepFuncProps(memoize)
 
