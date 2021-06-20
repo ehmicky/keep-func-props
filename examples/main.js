@@ -5,7 +5,6 @@
 // An online demo is also available at:
 //   https://repl.it/@ehmicky/keep-func-props
 
-// eslint-disable-next-line node/no-extraneous-import
 import keepFuncProps from 'keep-func-props'
 
 // Any function wrapper works
