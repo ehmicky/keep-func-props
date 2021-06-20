@@ -1,3 +1,9 @@
+# 4.0.1
+
+## Bug fixes
+
+- Fix `main` field in `package.json`
+
 # 4.0.0
 
 ## Breaking changes
