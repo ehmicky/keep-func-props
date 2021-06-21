@@ -23,5 +23,4 @@ const keepFuncProps = function (functor) {
 const keepFuncPropsA = keepFuncProps(keepFuncProps)
 // Then we use it on `keepFuncProps()` itself so that it's named `keepFuncProps`
 // instead of `newFunctor`
-// eslint-disable-next-line import/no-default-export
 export default keepFuncPropsA(keepFuncProps)
