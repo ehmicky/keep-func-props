@@ -26,7 +26,7 @@ only called once.
 ```js
 import keepFuncProps from 'keep-func-props'
 // Any function wrapper works
-import memoize from 'lodash/memoize'
+import memoize from 'lodash/memoize.js'
 
 const betterMemoize = keepFuncProps(memoize)
 
