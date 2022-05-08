@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@ehmicky/dev-tasks": "^1.0.73",
-    "sinon": "^13.0.1"
+    "sinon": "^14.0.0"
   },
   "engines": {
     "node": ">=14.18.0"
