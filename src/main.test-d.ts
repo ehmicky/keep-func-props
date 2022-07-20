@@ -1,5 +1,6 @@
-import keepFuncProps from 'keep-func-props'
 import { expectError, expectType } from 'tsd'
+
+import keepFuncProps from './main.js'
 
 const wrapper =
   (func: (...args: any[]) => boolean, arg: any) =>
