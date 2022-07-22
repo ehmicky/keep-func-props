@@ -1,4 +1,7 @@
-<img src="https://raw.githubusercontent.com/ehmicky/design/main/keep-func-props/keep-func-props.svg?sanitize=true" width="700"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ehmicky/design/main/keep-func-props/keep-func-props_dark.svg"/>
+  <img alt="keep-func-props logo" src="https://raw.githubusercontent.com/ehmicky/design/main/keep-func-props/keep-func-props.svg" width="700"/>
+</picture>
 
 [![Codecov](https://img.shields.io/codecov/c/github/ehmicky/keep-func-props.svg?label=tested&logo=codecov)](https://codecov.io/gh/ehmicky/keep-func-props)
 [![Node](https://img.shields.io/node/v/keep-func-props.svg?logo=node.js)](https://www.npmjs.com/package/keep-func-props)
