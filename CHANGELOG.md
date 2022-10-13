@@ -1,3 +1,9 @@
+# 5.3.1
+
+## Bug fixes
+
+- Fix `package.json`
+
 # 5.3.0
 
 - Switch to MIT license

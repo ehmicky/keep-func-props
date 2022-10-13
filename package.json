@@ -25,7 +25,7 @@
     "call",
     "typescript"
   ],
-  "license": "Apache-2.0",
+  "license": "MIT",
   "homepage": "https://www.github.com/ehmicky/keep-func-props",
   "repository": "ehmicky/keep-func-props",
   "bugs": {
