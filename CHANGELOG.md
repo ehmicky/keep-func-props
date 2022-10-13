@@ -1,3 +1,7 @@
+# 5.3.0
+
+- Switch to MIT license
+
 # 5.2.0
 
 ## Features
