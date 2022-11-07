@@ -1,3 +1,9 @@
+# 5.4.0
+
+## Features
+
+- Add browser support
+
 # 5.3.1
 
 ## Bug fixes
