@@ -1,3 +1,9 @@
+# 5.5.0
+
+## Features
+
+- Improve tree-shaking support
+
 # 5.4.0
 
 ## Features
