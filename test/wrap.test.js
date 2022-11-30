@@ -2,7 +2,7 @@ import test from 'ava'
 import keepFuncProps from 'keep-func-props'
 import sinon from 'sinon'
 
-import { identityFunctor, identityFunc } from './helpers/main.js'
+import { identityFunctor, identityFunc } from './helpers/main.test.js'
 
 test('should pass functor arguments', (t) => {
   const functor = sinon.spy(identityFunctor)

@@ -1,7 +1,7 @@
 import test from 'ava'
 import keepFuncProps from 'keep-func-props'
 
-import { identityFunctor, identityFunc } from './helpers/main.js'
+import { identityFunctor, identityFunc } from './helpers/main.test.js'
 
 test('should copy properties', (t) => {
   const func = identityFunc.bind()

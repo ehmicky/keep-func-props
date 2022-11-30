@@ -1,7 +1,7 @@
 import test from 'ava'
 import keepFuncProps from 'keep-func-props'
 
-import { identityFunc } from './helpers/main.js'
+import { identityFunc } from './helpers/main.test.js'
 
 test('should be a noop if input is not a function', (t) => {
   const returnValue = keepFuncProps(true)
