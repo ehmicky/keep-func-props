@@ -46,7 +46,7 @@
     "mimic-fn": "^4.0.0"
   },
   "devDependencies": {
-    "@ehmicky/dev-tasks": "^2.0.44",
+    "@ehmicky/dev-tasks": "^2.0.45",
     "sinon": "^15.0.0"
   },
   "engines": {
