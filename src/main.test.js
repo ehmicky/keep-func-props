@@ -1,7 +1,65 @@
 import test from 'ava'
 import keepFuncProps from 'keep-func-props'
+import sinon from 'sinon'
 
-import { identityFunctor, identityFunc } from './helpers/main.test.js'
+// Dummy functors and functions used in tests
+const identityFunctor = function (func) {
+  return function newFunc(...args) {
+    // eslint-disable-next-line fp/no-this, no-invalid-this
+    return func.call(this, ...args)
+  }
+}
+
+const identityFunc = function (value) {
+  return value
+}
+
+test('should be a noop if input is not a function', (t) => {
+  const returnValue = keepFuncProps(true)
+
+  t.true(returnValue)
+})
+
+test('should allow functors not returning a function', (t) => {
+  // eslint-disable-next-line unicorn/consistent-function-scoping
+  const getTrue = () => true
+  const functor = keepFuncProps(getTrue)
+  const returnValue = functor(identityFunc)
+
+  t.true(returnValue)
+})
+
+test('should allow functors not taking a function as argument', (t) => {
+  // eslint-disable-next-line unicorn/consistent-function-scoping
+  const getTrue = () => true
+  const functor = keepFuncProps(getTrue)
+  const returnValue = functor()
+
+  t.true(returnValue)
+})
+
+test('should pass functor arguments', (t) => {
+  const functor = sinon.spy(identityFunctor)
+
+  const functorCopy = keepFuncProps(functor)
+  functorCopy(identityFunc, 'a', 'b')
+
+  t.true(functor.calledWith(identityFunc, 'a', 'b'))
+})
+
+test('should pass functor context', (t) => {
+  const functor = sinon.spy(identityFunctor)
+
+  const functorCopy = keepFuncProps(functor)
+  const context = {}
+  functorCopy.call(context, identityFunc)
+
+  t.true(functor.calledOn(context))
+})
+
+test('should wrap itself', (t) => {
+  t.is(keepFuncProps.name, 'keepFuncProps')
+})
 
 test('should copy properties', (t) => {
   const func = identityFunc.bind()
