@@ -1,7 +1,6 @@
 import keepFuncProps from 'keep-func-props'
 import { expectType } from 'tsd'
 
-
 const wrapper =
   (func: (...args: any[]) => boolean, arg: any) =>
   (...args: any[]) =>
