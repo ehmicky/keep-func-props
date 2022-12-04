@@ -1,4 +1,4 @@
-import { expectError, expectType } from 'tsd'
+import { expectType } from 'tsd'
 
 import keepFuncProps from 'keep-func-props'
 
@@ -14,5 +14,7 @@ const wrapperTwo =
     func(...args)
 expectType<typeof wrapperTwo>(keepFuncProps(wrapperTwo))
 
-expectError(keepFuncProps())
-expectError(keepFuncProps(true))
+// @ts-expect-error
+keepFuncProps()
+// @ts-expect-error
+keepFuncProps(true)
