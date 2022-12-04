@@ -2,15 +2,15 @@ import keepFuncProps from 'keep-func-props'
 import { expectType } from 'tsd'
 
 const wrapper =
-  (func: (...args: any[]) => boolean, arg: any) =>
-  (...args: any[]) =>
+  (func: (...args: unknown[]) => boolean, arg: unknown) =>
+  (...args: unknown[]) =>
     func(...args, arg)
 expectType<typeof wrapper>(keepFuncProps(wrapper))
 
 const wrapperTwo =
-  (func: Function) =>
-  (...args: any[]) =>
-    func(...args)
+  (Func: new (...args: unknown[]) => boolean) =>
+  (...args: unknown[]) =>
+    new Func(...args)
 expectType<typeof wrapperTwo>(keepFuncProps(wrapperTwo))
 
 // @ts-expect-error
