@@ -3,16 +3,13 @@ import keepFuncProps from 'keep-func-props'
 import sinon from 'sinon'
 
 // Dummy functors and functions used in tests
-const identityFunctor = function (func) {
-  return function newFunc(...args) {
+const identityFunctor = (func) =>
+  function newFunc(...args) {
     // eslint-disable-next-line fp/no-this, no-invalid-this
     return func.call(this, ...args)
   }
-}
 
-const identityFunc = function (value) {
-  return value
-}
+const identityFunc = (value) => value
 
 test('should be a noop if input is not a function', (t) => {
   const returnValue = keepFuncProps(true)

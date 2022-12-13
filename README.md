@@ -82,9 +82,10 @@ not `require()`.
 import keepFuncProps from 'keep-func-props'
 
 // Any function wrapper works
-const wrapper = function (anyFunction) {
-  return (...args) => anyFunction(...args)
-}
+const wrapper =
+  (anyFunction) =>
+  (...args) =>
+    anyFunction(...args)
 
 // `betterWrapper` is like `wrapper` but it keeps the function properties
 const betterWrapper = keepFuncProps(wrapper)
