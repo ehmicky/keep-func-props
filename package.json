@@ -33,7 +33,10 @@
   ],
   "license": "MIT",
   "homepage": "https://www.github.com/ehmicky/keep-func-props",
-  "repository": "ehmicky/keep-func-props",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehmicky/keep-func-props.git"
+  },
   "bugs": {
     "url": "https://github.com/ehmicky/keep-func-props/issues"
   },
