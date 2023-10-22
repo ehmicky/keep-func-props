@@ -1,6 +1,6 @@
 import test from 'ava'
 import keepFuncProps from 'keep-func-props'
-import sinon from 'sinon'
+import { spy } from 'sinon'
 
 // Dummy functors and functions used in tests
 const identityFunctor = (func) =>
@@ -36,7 +36,7 @@ test('should allow functors not taking a function as argument', (t) => {
 })
 
 test('should pass functor arguments', (t) => {
-  const functor = sinon.spy(identityFunctor)
+  const functor = spy(identityFunctor)
 
   const functorCopy = keepFuncProps(functor)
   functorCopy(identityFunc, 'a', 'b')
@@ -45,7 +45,7 @@ test('should pass functor arguments', (t) => {
 })
 
 test('should pass functor context', (t) => {
-  const functor = sinon.spy(identityFunctor)
+  const functor = spy(identityFunctor)
 
   const functorCopy = keepFuncProps(functor)
   const context = {}
