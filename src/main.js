@@ -1,4 +1,4 @@
-import mimicFn from 'mimic-fn'
+import mimicFunction from 'mimic-function'
 
 // Wraps a functor so it does not modify a function `name`, etc.
 const keepFuncProps = (functor) => {
@@ -11,7 +11,7 @@ const keepFuncProps = (functor) => {
     const newFunc = functor.call(this, func, ...args)
 
     if (typeof func === 'function' && typeof newFunc === 'function') {
-      mimicFn(newFunc, func, { ignoreNonConfigurable: true })
+      mimicFunction(newFunc, func, { ignoreNonConfigurable: true })
     }
 
     return newFunc

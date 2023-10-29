@@ -112,8 +112,8 @@ A function `wrapper` is passed as argument. A copy of it is returned.
 
 # See also
 
-- [`mimic-fn`](https://github.com/sindresorhus/mimic-fn): same but for functions
-  that do not wrap other functions.
+- [`mimic-function`](https://github.com/sindresorhus/mimic-function): same but
+  for functions that do not wrap other functions.
 
 # Support
 

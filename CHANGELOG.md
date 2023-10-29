@@ -1,3 +1,9 @@
+# 7.1.0
+
+## Dependencies
+
+- Upgrade `mimic-function`
+
 # 7.0.0
 
 ## Breaking changes

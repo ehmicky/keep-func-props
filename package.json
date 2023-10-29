@@ -45,7 +45,7 @@
     "lib": "src"
   },
   "dependencies": {
-    "mimic-fn": "^4.0.0"
+    "mimic-function": "^5.0.0"
   },
   "devDependencies": {
     "@ehmicky/dev-tasks": "^2.0.103",
