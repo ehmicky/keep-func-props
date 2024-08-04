@@ -48,7 +48,7 @@
     "mimic-function": "^5.0.1"
   },
   "devDependencies": {
-    "@ehmicky/dev-tasks": "^3.0.8",
+    "@ehmicky/dev-tasks": "^3.0.9",
     "sinon": "^18.0.0"
   },
   "engines": {
