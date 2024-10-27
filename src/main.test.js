@@ -1,6 +1,7 @@
 import test from 'ava'
-import keepFuncProps from 'keep-func-props'
 import { spy } from 'sinon'
+
+import keepFuncProps from 'keep-func-props'
 
 // Dummy functors and functions used in tests
 const identityFunctor = (func) =>

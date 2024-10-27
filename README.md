@@ -35,7 +35,7 @@ technical lead for 2.5 years. I am available for full-time remote positions.
 
 # Example
 
-<!-- eslint-disable node/file-extension-in-import -->
+<!-- eslint-disable node/file-extension-in-import, import/order -->
 
 ```js
 import keepFuncProps from 'keep-func-props'
