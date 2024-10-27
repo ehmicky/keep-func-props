@@ -32,5 +32,5 @@
  * // () => true
  * ```
  */
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export default function keepFuncProps<T extends Function>(wrapper: T): T
