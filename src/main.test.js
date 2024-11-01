@@ -95,6 +95,7 @@ test('should not copy `length`', (t) => {
 
 test('should copy property descriptors', (t) => {
   const func = identityFunc.bind()
+  // eslint-disable-next-line fp/no-mutating-methods
   Object.defineProperty(func, 'prop', {
     get: identityFunc,
     configurable: false,
@@ -123,6 +124,7 @@ test('should copy symbol properties', (t) => {
 
 test('should copy non-enumerable properties', (t) => {
   const func = identityFunc.bind()
+  // eslint-disable-next-line fp/no-mutating-methods
   Object.defineProperty(func, 'nonEnum', { value: true, enumerable: false })
 
   const functor = keepFuncProps(identityFunctor)
