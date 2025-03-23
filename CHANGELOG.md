@@ -1,3 +1,9 @@
+# 7.1.1
+
+## Documentation
+
+- Update `README.md`
+
 # 7.1.0
 
 ## Dependencies
