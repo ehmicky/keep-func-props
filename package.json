@@ -51,7 +51,7 @@
     "@ehmicky/dev-tasks": "^3.0.33",
     "@ehmicky/eslint-config": "^20.0.30",
     "@ehmicky/prettier-config": "^1.0.5",
-    "sinon": "^19.0.4"
+    "sinon": "^20.0.0"
   },
   "engines": {
     "node": ">=18.18.0"
