@@ -1,6 +1,6 @@
 {
   "name": "keep-func-props",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "type": "module",
   "exports": {
     "types": "./build/src/main.d.ts",
